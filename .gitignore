@@ -3,3 +3,9 @@
 
 #Ignore project specific IntelliJ settings
 .idea/
+
+#Ignore files used for testing output
+Test.jpg
+
+#Ignore compiled code
+out/
