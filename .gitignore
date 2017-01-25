@@ -1,2 +1,5 @@
 #Ignore IntelliJ organizational file
 *.iml
+
+#Ignore project specific IntelliJ settings
+.idea/
