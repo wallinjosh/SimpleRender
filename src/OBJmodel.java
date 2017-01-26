@@ -46,7 +46,7 @@ public class OBJmodel {
                     vertices.add(xy);
                 } else if (currentLine.charAt(0) == 'f') {
                     vals = currentLine.substring(2).split("[ /]");
-                    int[] face = {Integer.parseInt(vals[0]), Integer.parseInt(vals[3]), Integer.parseInt(vals[6])};
+                    int[] face = {Integer.parseInt(vals[0]) - 1, Integer.parseInt(vals[3]) - 1, Integer.parseInt(vals[6]) - 1};
                     System.out.println("F: " + face[0] + ", " + face[1] + ", " + face[2]);
                     faces.add(face);
                 }

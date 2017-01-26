@@ -13,3 +13,4 @@ out/
 #Ignore test .obj files used
 *.obj
 *.obj.txt
+*.txt

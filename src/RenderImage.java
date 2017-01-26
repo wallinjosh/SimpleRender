@@ -4,6 +4,8 @@
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
+import java.awt.Graphics;
+import java.awt.Color;
 
 public class RenderImage {
 
@@ -12,6 +14,9 @@ public class RenderImage {
 
     public RenderImage(int width, int height){
         image = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
+        Graphics g = image.getGraphics();
+        g.setColor(new Color(255, 255, 255));
+        g.fillRect(0, 0, image.getWidth(), image.getHeight());
     }
 
     public int getPixel(int x, int y){
@@ -20,6 +25,14 @@ public class RenderImage {
 
     public void setPixel(int x, int y, int rgb){
         image.setRGB(x,y,rgb);
+    }
+
+    public int getWidth(){
+        return image.getWidth();
+    }
+
+    public int getHeight(){
+        return image.getHeight();
     }
 
     public void setPixel(int x, int y, int red, int green, int blue){

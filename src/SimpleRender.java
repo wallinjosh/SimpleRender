@@ -5,18 +5,23 @@ public class SimpleRender {
 
 
     public static void main(String[] args){
-        RenderImage im = new RenderImage(500, 500);
+        RenderImage im = new RenderImage(10000, 10000);
 
 
         OBJmodel head = new OBJmodel("african_head.obj.txt");
         for(int i = 0; i < head.getFaces().size(); i++){
 
             for(int j = 0; j < 3; j++){
-                int x0 = (int) head.getVertices().get(head.getFaces().get(i)[j] - 1)[0];
-                int x1 = (int) head.getVertices().get(head.getFaces().get(i)[(j+1)%3] - 1)[0];
-                int y0 = (int) head.getVertices().get(head.getFaces().get(i)[j] - 1)[1];
-                int y1 = (int) head.getVertices().get(head.getFaces().get(i)[(j+1)%3] - 1)[1];
-                drawLine(x0, y0, x1, y1, 0xFF0000, im);
+                int x0 = (int) (head.getVertices().get(head.getFaces().get(i)[j])[0] * im.getWidth()/2 + 5000);
+                x0 += (x0 > im.getWidth() - 1) ? -1 : 0;
+                int x1 = (int) (head.getVertices().get(head.getFaces().get(i)[(j+1)%3])[0] * im.getWidth()/2 + 5000);
+                x1 += (x1 > im.getWidth() - 1) ? -1 : 0;
+                int y0 = (int) (10000.0 - (head.getVertices().get(head.getFaces().get(i)[j])[1] * im.getHeight()/2 + 5000));
+                y0 += (y0 > im.getHeight() - 1) ? -1 : 0;
+                int y1 = (int) (10000.0 - (head.getVertices().get(head.getFaces().get(i)[(j+1)%3])[1] * im.getHeight()/2 + 5000));
+                y1 += (y1 > im.getHeight() - 1) ? -1 : 0;
+                System.out.println(x0 + ", " + y0 + " - > " + x1 + ", " + y1);
+                drawLine(x0, y0, x1, y1, 0xFF8000, im);
             }
 
         }
