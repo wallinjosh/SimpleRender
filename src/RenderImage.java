@@ -9,6 +9,7 @@ public class RenderImage {
 
     private BufferedImage image;
 
+
     public RenderImage(int width, int height){
         image = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
     }
@@ -36,5 +37,7 @@ public class RenderImage {
             e.printStackTrace();
         }
     }
+
+
 
 }

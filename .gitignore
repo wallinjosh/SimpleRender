@@ -9,3 +9,7 @@ Test.jpg
 
 #Ignore compiled code
 out/
+
+#Ignore test .obj files used
+*.obj
+*.obj.txt
