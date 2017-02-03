@@ -15,7 +15,7 @@ public class RenderImage {
     public RenderImage(int width, int height){
         image = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
         Graphics g = image.getGraphics();
-        g.setColor(new Color(255, 255, 255));
+        g.setColor(new Color(0x000000));
         g.fillRect(0, 0, image.getWidth(), image.getHeight());
     }
 
